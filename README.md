@@ -11,11 +11,41 @@ wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/chromFa.tar.gz && ta
 ```
 - MD5 sum is provided here: http://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/md5sum.txt. We can use `md5sum chromFa.tar.gz` to check whether the reference genome we downloaded is intact.
 - Note that these fasta files represent seperate chromosomes. We need to merge these files (scripts/merge.sh) `bash merge.sh`. 
+```
+#!/bin/bash
+# Filename: merge.sh
+# Function:
+#   Merge the seperate fasta files in human reference gonome hg19.
+#   $(seq 1 22), X, Y, M represent chromosomes.
+# 2020/04/06  jinling
+
+reference=../data/reference
+
+for i in $(seq 1 22) X Y M
+do
+    cat $reference/chr$i.fa >> $reference/hg19.fa
+done
+```
 - To save hard-disk space, we remove these seperate fasta files `rm chr*.fa` and the original compressed file `rm chromFa.tar.gz`.
 
 ## Download raw RNA-Seq sequences
 - Download raw data in .sra format from https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos1/sra-pub-run-5/SRR957[677-680]/SRR957[677-680].1
 - I downloaded the raw sequences to my Windows10 system, and transferred them to my WSL (Windows Subsystem for Linux) (scripts/win-2-ubuntu.sh) `bash win-2-ubuntu.sh`.
+```
+#!/bin/bash
+# Filename: win-2-ubuntu.sh
+# Function:
+#   Move .sra files downloaded in Windows10 system to WSL.
+# 2020/04/06  jinling
+
+source=/mnt/c/Users/jinling/Downloads
+target=../data/raw
+
+for i in $(seq 677 680)
+do
+    cp $source/SRR957$i.1 $target/SRR957$i.1.sra
+done
+```
 - Here is the raw data list:
 
 | Sample | SRA |
