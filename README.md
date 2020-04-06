@@ -10,12 +10,12 @@ mkdir -p ~/rna-seq/data/reference && cd ~/rna-seq/data/reference
 wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/chromFa.tar.gz && tar -zxvf chromFa.tar.gz
 ```
 - MD5 sum is provided here: http://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/md5sum.txt. We can use `md5sum chromFa.tar.gz` to check whether the reference genome we downloaded is intact.
-- Note that these fasta files represent seperate chromosomes. We need to merge these files (scripts/merge.sh). 
+- Note that these fasta files represent seperate chromosomes. We need to merge these files (scripts/merge.sh) `bash merge.sh`. 
 - To save hard-disk space, we remove these seperate fasta files `rm chr*.fa` and the original compressed file `rm chromFa.tar.gz`.
 
 ## Download raw RNA-Seq sequences
 - Download raw data in .sra format from https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos1/sra-pub-run-5/SRR957[677-680]/SRR957[677-680].1
-- I downloaded the raw sequences to my Windows10 system, and transferred them to my WSL (Windows Subsystem for Linux) (scripts/win-2-ubuntu.sh)
+- I downloaded the raw sequences to my Windows10 system, and transferred them to my WSL (Windows Subsystem for Linux) (scripts/win-2-ubuntu.sh) `bash win-2-ubuntu.sh`.
 - Here is the raw data list:
 
 | Sample | SRA |
