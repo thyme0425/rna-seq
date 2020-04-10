@@ -1,2 +1,11 @@
 data/raw/*.sra
+data/raw/*.fastq
 data/reference/*.fa
+data/annotation/*.gtf.gz
+analysis/fastqc/*.html
+analysis/fastqc/*.zip
+data/index/*.ht2
+analysis/align/*.log
+analysis/align/*.sort.bam
+analysis/count/*.genecounts
+analysis/count/*.htseq.log
