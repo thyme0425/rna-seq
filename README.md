@@ -3,6 +3,12 @@
 - original pipeline: http://www.bio-info-trainee.com/2218.html
 - article: Davidovich C, Zheng L, Goodrich KJ, Cech TR. Promiscuous RNA binding by Polycomb repressive complex 2. Nat Struct Mol Biol 2013 Nov;20(11):1250-7. PMID: 24077223
 
+## **Tools**
+- fastq-dump 2.8.0
+- fastqc 0.11.9
+- hisat2 2.2.0
+- samtools 1.7
+- htseq 0.11.3
 ## **Download the human reference genome**
 - Download version hg19 deposited in UCSC. Code:
 ```
